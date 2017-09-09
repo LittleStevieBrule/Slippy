@@ -1,0 +1,21 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/.idea/
+/.DS_Store
+*.orig
+*.swp
+*.gem
+/_windows/
+/codestyles/
+/inspection/
+*.xml
+
+# rspec failure tracking
+.rspec_status
