@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "Slippy"
+require "slippy"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
