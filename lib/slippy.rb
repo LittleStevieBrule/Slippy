@@ -6,6 +6,10 @@ require 'Slippy/analysis'
 require 'pry'
 require 'timeout'
 
+# TODO ITEMS BELOW:
+# Unit tests need to written for all the files in Slippy
+# Need to document all of these methods
+
 # main module
 module Slippy
 

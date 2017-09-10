@@ -20,6 +20,7 @@ module Slippy
       @result ||= Results.new
     end
 
+    # results class
     class Results
 
       def initialize
