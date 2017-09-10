@@ -1,6 +1,7 @@
 require 'Slippy/version'
 require 'Slippy/config_object'
 require 'Slippy/run.rb'
+require 'Slippy/analysis'
 
 require 'pry'
 require 'timeout'

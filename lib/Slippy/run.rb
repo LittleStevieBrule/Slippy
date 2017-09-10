@@ -1,4 +1,5 @@
 require 'pry'
+require_relative 'analysis'
 
 # run class
 class Run
@@ -26,9 +27,10 @@ class Run
   def go
     @data.each do |d|
       @algorithms.each do |alg|
-        send(alg, d)
+        result[alg] = send(alg, d)
       end
     end
+    result.report
   end
 
 end
