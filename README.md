@@ -1,6 +1,6 @@
 # Slippy [![Build Status](https://travis-ci.org/LittleStevieBrule/Slippy.svg?branch=master)](https://travis-ci.org/LittleStevieBrule/Slippy)
 
-![](https://dl.dropbox.com/s/pu4846ieg6kusex/Slippy.jpg {width=100px height=100px})
+<img src="https://dl.dropbox.com/s/pu4846ieg6kusex/Slippy.jpg" alt="alt text" width="100" height="100">
 
 ## Installation
 
