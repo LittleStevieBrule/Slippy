@@ -3,6 +3,7 @@ require 'Slippy/config_object'
 require 'Slippy/run.rb'
 
 require 'pry'
+require 'timeout'
 
 # main module
 module Slippy

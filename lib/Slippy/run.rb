@@ -2,7 +2,7 @@ require 'pry'
 
 # run class
 class Run
-  # include Slippy::Analysis
+  include Slippy::Analysis
 
   def initialize(name)
     @name = name
@@ -26,7 +26,7 @@ class Run
   def go
     @data.each do |d|
       @algorithms.each do |alg|
-        puts send(alg, d)
+        send(alg, d)
       end
     end
   end
