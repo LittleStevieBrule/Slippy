@@ -45,16 +45,6 @@ RSpec.describe Slippy do
           n < 3 ? 1 : rec(n - 1) + rec(n - 2)
         end
 
-        run.add_algorithm(:memo) do |n|
-          memo = [0, 1]
-          (n - 1).times do
-            new = memo[0] + memo[1]
-            memo[0] = memo[1]
-            memo[1] = new
-          end
-          memo[1]
-        end
-
         run.add_algorithm(:memo_rec) do |n, memo = [0, 1]|
           memo[n] ? memo[n] : memo_rec(n - 1, memo) + memo_rec(n - 2, memo)
         end

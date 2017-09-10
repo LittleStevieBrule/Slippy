@@ -1,28 +1,38 @@
 # Slippy [![Build Status](https://travis-ci.org/LittleStevieBrule/Slippy.svg?branch=master)](https://travis-ci.org/LittleStevieBrule/Slippy)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Slippy`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+![Slippy](https://dl.dropbox.com/s/pu4846ieg6kusex/Slippy.jpg "Slip")
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'Slippy'
+gem 'Slippy', :git => 'https://github.com/LittleStevieBrule/Slippy'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install Slippy
-
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+
+require 'slippy'
+
+run = Slippy.run(:fib) do |run|
+  run.add_algorithm(:rec) do |n|
+    n < 3 ? 1 : rec(n - 1) + rec(n - 2)
+  end
+    
+  run.add_algorithm(:memo_rec) do |n, memo = [0, 1]|
+    memo[n] ? memo[n] : memo_rec(n - 1, memo) + memo_rec(n - 2, memo)
+  end
+    
+  run.add_data_set(*(5..15).step(5).to_a)
+end
+run.go # Result: Some meaningful output this is TODO
+```
 
 ## Development
 
