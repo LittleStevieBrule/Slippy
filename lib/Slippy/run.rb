@@ -27,7 +27,9 @@ class Run
   def go
     @data.each do |d|
       @algorithms.each do |alg|
-        result[alg] = send(alg, d)
+        result[alg] = timer do
+          send(alg, d)
+        end
       end
     end
     result.report

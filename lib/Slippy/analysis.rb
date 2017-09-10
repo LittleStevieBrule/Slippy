@@ -1,9 +1,10 @@
+require 'timeout'
 
 module Slippy
   # analysis method are located here
   module Analysis
 
-    def timer(timeout = 30)
+    def timer(timeout = Slippy.config.timeout)
       start = Time.now
       begin
         Timeout.timeout(timeout) do

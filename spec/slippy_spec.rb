@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 RSpec.describe Slippy do
 
   it 'has a version number' do
@@ -38,6 +39,7 @@ RSpec.describe Slippy do
       expect(Slippy.run(:test).class).to eq Run
     end
 
+    # TODO: this test does not belong here
     it 'should handle recursion' do
       run = Slippy.run(:fib) do |run|
 
@@ -53,7 +55,26 @@ RSpec.describe Slippy do
 
       end
       run.go
+    end
 
+    # TODO: this test does not belong here
+    it 'Should Timeout' do
+      Slippy.config.timeout = 30
+      run = Slippy.run(:fib) do |run|
+        run.add_algorithm(:rec) do |n|
+          n < 3 ? 1 : rec(n - 1) + rec(n - 2)
+        end
+        run.add_data_set(100)
+      end
+      start = Time.now
+      begin
+        Timeout.timeout(60) do
+          run.go
+        end
+      rescue Timeout::Error
+        raise
+      end
+      expect((Time.now - start) < 35)
     end
 
   end

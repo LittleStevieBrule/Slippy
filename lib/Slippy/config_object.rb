@@ -3,6 +3,14 @@ require 'ostruct'
 # Configuration object
 # You can define anything on this object
 class Config < OpenStruct
+
+  def initialize(hash)
+    super hash
+    hash.each do |k, v|
+      send("#{k}=", v)
+    end
+  end
+
   def method_missing(name, *args, &block)
     if /^.*=$/.match? name
       super
