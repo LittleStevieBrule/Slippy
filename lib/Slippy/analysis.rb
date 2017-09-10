@@ -16,5 +16,34 @@ module Slippy
       Time.now - start
     end
 
+    def result
+      @result ||= Results.new
+    end
+
+    class Results
+
+      def initialize
+        @results = {}
+      end
+
+      def []=(key,value)
+        @results[key] = value
+      end
+
+      def [](key)
+        @results[key]
+      end
+
+      def report
+        result = @results.keys.map do |key|
+          "#{self.class}:#{key}:#{@results[key]}"
+        end
+        result.each do |e|
+          puts e
+        end
+      end
+
+    end
+
   end
 end
